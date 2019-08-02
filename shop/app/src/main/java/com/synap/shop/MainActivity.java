@@ -25,6 +25,8 @@ import com.synap.pay.model.payment.SynapSettings;
 import com.synap.pay.model.payment.SynapTransaction;
 import com.synap.pay.model.payment.response.SynapAuthorizeResponse;
 import com.synap.pay.model.security.SynapAuthenticator;
+import com.synap.pay.theming.SynapLightTheme;
+import com.synap.pay.theming.SynapTheme;
 
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -75,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Crea el objeto del widget de pago
         this.paymentWidget=SynapPayButton.create(synapForm);
+
+        // Tema de fondo en la tarjeta (Light o Dark)
+        SynapTheme theme = new SynapLightTheme(); // Fondo Light con controles dark
+        //SynapTheme theme = new SynapDarkTheme(); // Fondo Dark con controles light
+        SynapPayButton.setTheme(theme);
 
         // Seteo del ambiente ".SANDBOX" o ".PRODUCTION"
         SynapPayButton.setEnvironment(SynapPayButton.Environment.SANDBOX);
