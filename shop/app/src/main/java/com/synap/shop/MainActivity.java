@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.synap.pay.SynapPayButton;
+import com.synap.pay.handler.EventHandler;
 import com.synap.pay.handler.payment.SynapAuthorizeHandler;
 import com.synap.pay.model.payment.SynapAddress;
 import com.synap.pay.model.payment.SynapCardStorage;
@@ -92,6 +93,26 @@ public class MainActivity extends AppCompatActivity {
         // Seteo de los campos de autenticación de seguridad
         SynapAuthenticator authenticator=this.buildAuthenticator(transaction);
 
+        // Control de eventos en el formulario de pago
+        SynapPayButton.setListener(new EventHandler() {
+            @Override
+            public void onEvent(SynapPayButton.Events event) {
+                Button paymentButton;
+                switch (event){
+                    case START_PAY:
+                        paymentButton=findViewById(R.id.synapButton);
+                        paymentButton.setVisibility(View.GONE);
+                        break;
+                    case INVALID_CARD_FORM:
+                        paymentButton=findViewById(R.id.synapButton);
+                        paymentButton.setVisibility(View.VISIBLE);
+                        break;
+                    case VALID_CARD_FORM:
+                        break;
+                }
+            }
+        });
+
         this.paymentWidget.configure(
                 // Seteo de autenticación de seguridad y transacción
                 authenticator,
@@ -124,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        Button paymentButton;
+        paymentButton=findViewById(R.id.synapButton);
+        paymentButton.setVisibility(View.VISIBLE);
     }
 
     private SynapTransaction buildTransaction(){
@@ -228,12 +252,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private SynapAuthenticator buildAuthenticator(SynapTransaction transaction){
-        String apiKey="98230cbf-b814-4300-bb38-8c093bed72f6";
+        String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
 
         // La signatureKey y la función de generación de firma debe usarse e implementarse en el servidor del comercio utilizando la función criptográfica SHA-512
         // solo con propósito de demostrar la funcionalidad, se implementará en el ejemplo
         // (bajo ninguna circunstancia debe exponerse la signatureKey y la función de firma desde la aplicación porque compromete la seguridad)
-        String signatureKey="ibYl^ykGojrIWAGO*u=KaMv-6dOyYR&U";
+        String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
         String signature=generateSignature(transaction,apiKey,signatureKey);
 
         // Referencie el objeto de autenticación
