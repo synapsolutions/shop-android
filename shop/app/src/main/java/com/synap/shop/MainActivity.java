@@ -244,7 +244,10 @@ public class MainActivity extends AppCompatActivity {
         // Feature Card-Storage (Recordar Tarjeta)
         SynapFeatures features=new SynapFeatures();
         SynapCardStorage cardStorage=new SynapCardStorage();
+
+        // Omitir setUserIdentifier, si se trata de usuario anónimo
         cardStorage.setUserIdentifier("javier.perez@synapsolutions.com");
+
         features.setCardStorage(cardStorage);
         transaction.setFeatures(features);
 
@@ -258,7 +261,13 @@ public class MainActivity extends AppCompatActivity {
         // solo con propósito de demostrar la funcionalidad, se implementará en el ejemplo
         // (bajo ninguna circunstancia debe exponerse la signatureKey y la función de firma desde la aplicación porque compromete la seguridad)
         String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
+
         String signature=generateSignature(transaction,apiKey,signatureKey);
+
+        // El campo onBehalf es opcional y se usa cuando un comercio agrupa otros sub comercios
+        // la conexión con cada sub comercio se realiza con las credenciales del comercio agrupador
+        // y enviando el identificador del sub comercio en el campo onBehalf
+        //String onBehalf="cf747220-b471-4439-9130-d086d4ca83d4";
 
         // Referencie el objeto de autenticación
         SynapAuthenticator authenticator=new SynapAuthenticator();
@@ -268,6 +277,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Seteo de firma, que permite verificar la integridad de la transacción
         authenticator.setSignature(signature);
+
+        // Seteo de onBehalf, que permite identificar las transacciones de los subcomercios
+        //authenticator.setOnBehalf(onBehalf);
 
         return authenticator;
     }
