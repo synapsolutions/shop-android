@@ -19,6 +19,7 @@ import com.synap.pay.model.payment.SynapCountry;
 import com.synap.pay.model.payment.SynapCurrency;
 import com.synap.pay.model.payment.SynapDocument;
 import com.synap.pay.model.payment.SynapFeatures;
+import com.synap.pay.model.payment.SynapMetadata;
 import com.synap.pay.model.payment.SynapOrder;
 import com.synap.pay.model.payment.SynapPerson;
 import com.synap.pay.model.payment.SynapProduct;
@@ -26,6 +27,7 @@ import com.synap.pay.model.payment.SynapSettings;
 import com.synap.pay.model.payment.SynapTransaction;
 import com.synap.pay.model.payment.response.SynapAuthorizeResponse;
 import com.synap.pay.model.security.SynapAuthenticator;
+import com.synap.pay.theming.SynapDarkTheme;
 import com.synap.pay.theming.SynapLightTheme;
 import com.synap.pay.theming.SynapTheme;
 
@@ -80,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         this.paymentWidget=SynapPayButton.create(synapForm);
 
         // Tema de fondo en la tarjeta (Light o Dark)
-        SynapTheme theme = new SynapLightTheme(); // Fondo Light con controles dark
-        //SynapTheme theme = new SynapDarkTheme(); // Fondo Dark con controles light
+        // SynapTheme theme = new SynapLightTheme(); // Fondo de tajeta claro
+        SynapTheme theme = new SynapDarkTheme(); // Fondo de tajeta oscuro
         SynapPayButton.setTheme(theme);
 
         // Seteo del ambiente ".SANDBOX" o ".PRODUCTION"
@@ -123,15 +125,23 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void success(SynapAuthorizeResponse response) {
                         Looper.prepare();
-                        boolean resultAccepted=response.getResult().getAccepted();
-                        String resultMessage=response.getResult().getMessage();
-                        if (resultAccepted) {
-                            // Agregue el código según la experiencia del cliente para la autorización
-                            showMessage(resultMessage);
+                        boolean resultSuccess = response.getSuccess();
+                        if (resultSuccess) {
+                            boolean resultAccepted=response.getResult().getAccepted();
+                            String resultMessage=response.getResult().getMessage();
+                            if (resultAccepted) {
+                                // Agregue el código según la experiencia del cliente para la autorización
+                                showMessage(resultMessage);
+                            }
+                            else {
+                                // Agregue el código según la experiencia del cliente para la denegación
+                                showMessage(resultMessage);
+                            }
                         }
                         else {
-                            // Agregue el código según la experiencia del cliente para la denegación
-                            showMessage(resultMessage);
+                            String messageText=response.getMessage().getText();
+                            // Agregue el código de la experiencia que desee visualizar en un error
+                            showMessage(messageText);
                         }
                         Looper.loop();
                     }
@@ -158,12 +168,12 @@ public class MainActivity extends AppCompatActivity {
         // Referencie al objeto país
         SynapCountry country=new SynapCountry();
         // Seteo del código de país
-        country.setCode("PER");
+        country.setCode("PER"); // Código de País (ISO 3166-2)
 
         // Referencie al objeto moneda
         SynapCurrency currency=new SynapCurrency();
         // Seteo del código de moneda
-        currency.setCode("PEN");
+        currency.setCode("PEN"); // Código de Moneda - Alphabetic code (ISO 4217)
 
         //Seteo del monto
         String amount="1.00";
@@ -177,44 +187,55 @@ public class MainActivity extends AppCompatActivity {
         // Referencie al objeto dirección del cliente
         SynapAddress address=new SynapAddress();
         // Seteo del pais (country), niveles de ubicación geográfica (levels), dirección (line1 y line2) y código postal (zip)
-        address.setCountry("PER");
+        address.setCountry("PER"); // Código de País del cliente (ISO 3166-2)
         address.setLevels(new ArrayList<String>());
-        address.getLevels().add("150000");
-        address.getLevels().add("150100");
-        address.getLevels().add("150101");
-        address.setLine1("Ca Carlos Ferreyros 180");
-        address.setZip("15036");
+        address.getLevels().add("150000"); // Código de Área (Ubigeo - Departamento)
+        address.getLevels().add("150100"); // Código de Área (Ubigeo - Provincia)
+        address.getLevels().add("150101"); // Código de Área (Ubigeo - Distrito)
+        address.setLine1("Av La Solidaridad 103"); // Dirección
+        address.setZip("15034");
         customer.setAddress(address);
 
         // Seteo del email y teléfono
-        customer.setEmail("javier.perez@synapsolutions.com");
+        customer.setEmail("javier.perez@synapsis.pe");
         customer.setPhone("999888777");
 
         // Referencie al objeto documento del cliente
         SynapDocument document=new SynapDocument();
         // Seteo del tipo y número de documento
-        document.setType("DNI");
+        document.setType("DNI"); // [ DNI: Documento de identidad, CE: Carné de extranjería, PAS: Pasaporte, RUC: Registro único de contribuyente ]
         document.setNumber("44556677");
         customer.setDocument(document);
 
         // Seteo de los datos de envío
-        SynapPerson shipping=customer;
+        SynapPerson shipping=customer; // Opcional, misma estructura que "customer"
         // Seteo de los datos de facturación
-        SynapPerson billing=customer;
+        SynapPerson billing=customer; // Opcional, misma estructura que "customer"
 
         // Referencie al objeto producto
         SynapProduct productItem=new SynapProduct();
         // Seteo de los datos de producto
-        productItem.setCode("123");
+        productItem.setCode("123"); // Opcional
         productItem.setName("Llavero");
-        productItem.setQuantity("1");
-        productItem.setUnitAmount("1.00");
-        productItem.setAmount("1.00");
+        productItem.setQuantity("1"); // Opcional
+        productItem.setUnitAmount("1.00"); // Opcional
+        productItem.setAmount("1.00"); // Opcional
 
         // Referencie al objeto lista producto
         List<SynapProduct> products=new ArrayList<>();
         // Seteo de los datos de lista de producto
         products.add(productItem);
+
+        // Referencie al objeto metadata - Opcional
+        SynapMetadata metadataItem=new SynapMetadata();
+        // Seteo de los datos de metadata
+        metadataItem.setName("name1");
+        metadataItem.setValue("value1");
+
+        // Referencie al objeto lista de metadata - Opcional
+        List<SynapMetadata> metadataList=new ArrayList<>();
+        // Seteo de los datos de lista de metadata
+        metadataList.add(metadataItem);
 
         // Referencie al objeto orden
         SynapOrder order=new SynapOrder();
@@ -225,8 +246,15 @@ public class MainActivity extends AppCompatActivity {
         order.setCurrency(currency);
         order.setProducts(products);
         order.setCustomer(customer);
-        order.setShipping(shipping);
-        order.setBilling(billing);
+        order.setShipping(shipping); // Opcional
+        order.setBilling(billing); // Opcional
+        order.setMetadata(metadataList); // Opcional
+
+        // Referencia al objeto features (Recordar Tarjeta) - Opcional
+        SynapFeatures features=new SynapFeatures();
+        SynapCardStorage cardStorage=new SynapCardStorage();
+        cardStorage.setUserIdentifier("javier.perez@synapsis.pe"); // Puede ser cualquier identificador definido por el comercio
+        features.setCardStorage(cardStorage);
 
         // Referencie al objeto configuración
         SynapSettings settings=new SynapSettings();
@@ -239,17 +267,8 @@ public class MainActivity extends AppCompatActivity {
         SynapTransaction transaction=new SynapTransaction();
         // Seteo de los datos de transacción
         transaction.setOrder(order);
+        transaction.setFeatures(features); // Opcional
         transaction.setSettings(settings);
-
-        // Feature Card-Storage (Recordar Tarjeta)
-        SynapFeatures features=new SynapFeatures();
-        SynapCardStorage cardStorage=new SynapCardStorage();
-
-        // Omitir setUserIdentifier, si se trata de usuario anónimo
-        cardStorage.setUserIdentifier("javier.perez@synapsolutions.com");
-
-        features.setCardStorage(cardStorage);
-        transaction.setFeatures(features);
 
         return transaction;
     }
