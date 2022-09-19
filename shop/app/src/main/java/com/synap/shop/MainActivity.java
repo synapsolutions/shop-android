@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SynapPayButton paymentWidget;
     private FrameLayout synapForm;
+    private WebView synapWebView;
     private Button synapButton;
 
     @Override
@@ -50,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         // Asocie y oculte el contenedor del formulario de pago (FrameLayout), hasta que se ejecute la acción de continuar al pago
         synapForm = findViewById(R.id.synapForm);
         synapForm.setVisibility(View.GONE);
+
+        // Asocie y oculte el contenedor del formulario web (WebView), hasta que se ejecute el proceso de autenticación automáticamente
+        synapWebView = findViewById(R.id.synapWebView);
+        synapWebView.setVisibility(View.GONE);
 
         // Asocie y oculte el botón de pago (Button), hasta que se ejecute la acción de continuar al pago
         synapButton=findViewById(R.id.synapButton);
@@ -79,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         synapButton.setVisibility(View.VISIBLE);
 
         // Crea el objeto del widget de pago
-        this.paymentWidget=SynapPayButton.create(synapForm);
+        // this.paymentWidget=SynapPayButton.create(synapForm);
+        this.paymentWidget=SynapPayButton.create(synapForm, synapWebView);
 
         // Tema de fondo en la tarjeta (Light o Dark)
         // SynapTheme theme = new SynapLightTheme(); // Fondo de tajeta claro
@@ -119,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 // Seteo de autenticación de seguridad y transacción
                 authenticator,
                 transaction,
+                synapWebView,
 
                 // Manejo de la respuesta
                 new SynapAuthorizeHandler() {
@@ -274,12 +282,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private SynapAuthenticator buildAuthenticator(SynapTransaction transaction){
-        String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
+        String apiKey="4d78b7b1-52cd-418b-8532-94cf0a1d514c"; //"ab254a10-ddc2-4d84-8f31-d3fab9d49520";
 
         // La signatureKey y la función de generación de firma debe usarse e implementarse en el servidor del comercio utilizando la función criptográfica SHA-512
         // solo con propósito de demostrar la funcionalidad, se implementará en el ejemplo
         // (bajo ninguna circunstancia debe exponerse la signatureKey y la función de firma desde la aplicación porque compromete la seguridad)
-        String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
+        String signatureKey="x#lE6WT*4duyMODG*nIaD#Ma84qeS$ra"; //"eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
 
         String signature=generateSignature(transaction,apiKey,signatureKey);
 
