@@ -132,7 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 new SynapAuthorizeHandler() {
                     @Override
                     public void success(SynapAuthorizeResponse response) {
-                        Looper.prepare();
+                        if(Looper.myLooper() == null){
+                            Looper.prepare();
+                        }
+                        // Looper.prepare();
                         boolean resultSuccess = response.getSuccess();
                         if (resultSuccess) {
                             boolean resultAccepted=response.getResult().getAccepted();
@@ -205,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         customer.setAddress(address);
 
         // Seteo del email y teléfono
-        customer.setEmail("javier.perez@synapsis.pe");
+        customer.setEmail("review@review.com");
         customer.setPhone("999888777");
 
         // Referencie al objeto documento del cliente

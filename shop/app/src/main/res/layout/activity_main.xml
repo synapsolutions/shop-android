@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/synapWebView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <FrameLayout
         android:id="@+id/synapForm"
         android:layout_width="320dp"
@@ -68,4 +63,11 @@
         android:background="@drawable/synapsis_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/synapWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"/>
+
 </android.support.constraint.ConstraintLayout>
