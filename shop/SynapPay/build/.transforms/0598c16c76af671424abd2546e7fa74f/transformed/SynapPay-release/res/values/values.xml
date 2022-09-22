@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Synap Pay</string>
+    <string name="instruction_bbva_agent" translatable="false">
+        1. Acércate a un agente express del BBVA e indica que deseas pagar al servicio de recaudación de KashIO
+        \n\n2. Indica al Código de Agente de KashIO en BBVA:
+            \n\t1. Pago en Soles: 11140
+            \n\t2. Pago en Dólares: 11141
+        \n\n3. Proporciona tu CODIGO DE PAGO según corresponda, luego el monto y moneda a pagar
+        \n\n4. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_bbva_bank" translatable="false">
+        1. Acércate a una oficina o agencia del BBVA e indica que deseas pagar al servicio de recaudación de KashIO
+        \n\n2. Elije el tipo de moneda en la que quieres pagar
+        \n\n3. Proporciona tu CODIGO DE PAGO según corresponda
+        \n\n4. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_bbva_mobile" translatable="false">
+        1. Ingresa a tu cuenta del BBVA https://www.bbvacontinental.pe y selecciona la opción "BANCA POR INTERNET"
+        \n\n2. Accede a "PAGO DE SERVICIOS", busca la opción "INSTITUCIONES Y EMPRESAS" y selecciona la opción "KASHIO PERU SOLES"
+        \n\n3. Ingresa tu CODIGO DE PAGO y el monto total. Confirma el pago y listo!
+    </string>
+    <string name="instruction_bbva_web" translatable="false">
+        1. Ingresa a tu cuenta del BBVA https://www.bbvacontinental.pe y selecciona la opción “BANCA POR INTERNET”
+        \n\n2. Accede a "PAGO DE SERVICIOS", busca la opción "INSTITUCIONES Y EMPRESAS" y selecciona la opción "KASHIO PERU SOLES"
+        \n\n3. Coloca tu CODIGO DE PAGO y el monto total. Confirma el pago y listo!
+    </string>
+    <string name="instruction_bcp_agent" translatable="false">
+        1. Acércate a un agente del BCP e indica que deseas pagar al servicio de recaudación de KashIO.
+        \n\n2. Indica al Código de Agente de KashIO 15813 y proporciona tu CODIGO DE PAGO.
+        \n\n3. Elije la deuda a pagar y listo. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_bcp_bank" translatable="false">
+        1. Acércate a una oficina o agencia del BCP e indica que deseas pagar al servicio de recaudación de KashIO.
+        \n\n2. Elije el tipo de moneda a pagar y proporciona tu CODIGO DE PAGO.
+        \n\n3. Elije la deuda que deseas pagar y listo. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_bcp_mobile" translatable="false">
+        1. Ingresa a la aplicación móvil del BCP, accede al menú principal y selecciona la opción "PAGO DE SERVICIO".
+        \n\n2. Selecciona a la opción "BUSCAR POR EMPRESA O SERVICIO".
+        \n\n3. Ingresa el nombre de "KASHIO" y elige el tipo de moneda Dolares o Soles.
+        \n\n4. Ingresa tu CODIGO DE PAGO. Ingresa tu clave digital token y listo!
+    </string>
+    <string name="instruction_bcp_web" translatable="false">
+        1. Ingresa a tu cuenta del BCP, accediendo a https://www.viabcp.com y accede al menú de PAGAR Y TRASFERIR.
+        \n\n2. Busca y selecciona la empresa KASHIO PERU y el servicio "KASHIO PERU SOLES" y “KASHIO PERU DOLARES” según corresponda.
+        \n\n3. Ingresa tu CODIGO DE PAGO.
+        \n\n4. Selecciona la deuda a pagar, la cuenta de la que se realizara el débito, ingresa tu clave token y listo!
+    </string>
+    <string name="instruction_ibk_agent" translatable="false">
+        1. Acércate a un agente de Interbank e indica que deseas pagar al servicio de recaudación de KashIO
+        \n\n2. Indica al Código de Agente de KashIO en\n Interbank:
+        \n\t1. Pago en Soles: 0791501
+        \n\t2. Pago en Dólares: 0791502
+        \n\n3. Proporciona tu CODIGO DE PAGO según corresponda
+        \n\n4. Elije la deuda que deseas pagar y recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_ibk_bank" translatable="false">
+        1. Acércate a una oficina o agencia del Interbank e indica que deseas pagar al servicio de recaudación de KashIO
+        \n\n2. Elige la moneda a pagar y proporciona tu tu CODIGO DE PAGO según corresponda
+        \n\n3. Elije las deudas a pagar y listo
+        \n\n4. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_ibk_mobile" translatable="false">
+        1. Inicia sesión en la app movil del Interbank, en el menú principal ingresa a "OPERACIONES" y elige la opción de "PAGOS Y RECARGAS".
+        \n\n2. Selecciona la opción de "PAGO A INSTITUCIONES O EMPRESAS" y busca "KASHIO PERÚ" en la barra del buscador.
+        \n\n3. Elige el tipo de moneda, tu CODIGO DE PAGO y elige la cuota a pagar.
+        \n\n4. Selecciona la cuenta de la que sera debitado el monto a pagar, ingresa la clave token digital o código SMS y listo!
+    </string>
+    <string name="instruction_ibk_web" translatable="false">
+        1. Ingresa a tu cuenta del Interbank https://www.interbank.pe y selecciona la opción "BANCA POR INTERNET"
+        \n\n2. Selecciona la opción de "PAGO A INSTITUCIONES O EMPRESAS" y busca KASHIO PERU
+        \n\n3. Elige el tipo de moneda e ingresa tu CODIGO DE PAGO DE PAGO según corresponda
+        \n\n4. Selecciona la deuda a pagar y la cuenta de la que se realizara el cobro
+        \n\n5. Ingresa tu token digital o código SMS y listo!.
+    </string>
+    <string name="instruction_kashio" translatable="false">
+        Pago vía Banca Móvil y Web\n\n
+        1. Ingresa a tu Banca Móvil o Web.\n
+        2. Selecciona la opción \'Pagar Servicio\'.\n
+        3. Busca la institución ó empresa \'Kashio Peru\' y selecciona \'Kashio Peru @currency\'.\n
+        4. Ingresa tu Código de Pago, selecciona la deuda a pagar, confirma y ¡Listo!\n
+    </string>
+    <string name="instruction_kasnet_agent" translatable="false">
+        1. Señala que deseas pagar al servicio de recaudación de KASHIO PERU
+        \n\n2. Indica el código de recaudación de KASHIO PERU 220044
+        \n\n3. Proporciona tu CODIGO DE PAGO.
+    </string>
+    <string name="instruction_kasnet_bank" translatable="false">
+
+    </string>
+    <string name="instruction_kasnet_mobile" translatable="false">
+
+    </string>
+    <string name="instruction_kasnet_web" translatable="false">
+
+    </string>
+    <string name="instruction_pagoefectivo" translatable="false">
+        Pago vía Banca Móvil y por Internet\n\n
+        BBVA, BCP, Interbank, Caja Arequipa, Scotiabank, Banbif, Banco Pichincha(a) y Dale(b).\n\n
+        1. Selecciona la opción Pago de Servicios.\n
+        2. Busca y selecciona la institución\/empresa \'PAGOEFECTIVO\'.\n
+        3. Selecciona \'PAGOEFECTIVO @currency\'.\n
+        4. Ingresa tu Código CIP y sigue los pasos.\n\n
+        a. Habilitado solo en banca móvil.\n
+        b. Disponible en la billetera electrónica Dale.\n\n\n
+    </string>
+    <string name="instruction_pagoefectivo_text2" translatable="false">
+        Pago en efectivo por Agentes y Bodegas\n\n
+        Express BBVA, Agente BCP(a), Agente Interbank, Agente Red Digital(b), KasNet(c), Agente Niubiz(d), Caja Arequipa, Scotiabank, Tambo+(e),Western Union,Disashop,Perú Express-MoneyGram,Ya Ganaste,Cellpower.\n\n
+        1. Indica que vas realizar un pago a la empresa \'PAGOEFECTIVO\'.\n
+        2. Indica que realizarás el pago a \'PAGOEFECTIVO @currency\'.\n
+        3. Indica el Código CIP y el importe a pagar.\n\n
+        a. Agentes BCP: Brinda el código de empresa 02186.\n
+        b. Agente Red Digital: Comisión adicional S/ 1.00.\n
+        c. Agentes KasNet: Brinda el código de empresa 220060.\n
+        d. Agente Niubiz: Solo en Comercios que cuenten con la App VendeMás de Niubiz.\n
+        e. Tambo+: Opera a través de un Agente BBVA.\n\n
+        Nota: Los horarios de atención y monto de pago dependerán de cada establecimiento.\n\n\n
+    </string>
+    <string name="instruction_pagoefectivo_text3" translatable="false">
+        Pago en efectivo por Agencias Bancarias\n\n
+        BBVA, BCP, Interbank(a), Caja Arequipa, Scotiabank, BanBif, Banco de la Nación(b), Caja Sullana, Caja los Andes, Caja Paita, Caja Trujillo, Caja del Santa, Caja Raíz.\n\n
+        1. Indica que vas realizar un pago a la empresa \'PAGOEFECTIVO\'.\n
+        2. Indica que realizarás el pago a \'PAGOEFECTIVO @currency\'.\n
+        3. Indica el Código CIP y el importe a pagar.\n\n
+        a. Agentes Money Market de Interbank: Costo adicional S/ 2.00.\n
+        b. Solicítalo como pago de Factura en línea.\n\n\n
+    </string>
+    <string name="instruction_scotia_agent" translatable="false">
+        1. Señala que deseas pagar al servicio de recaudación de KASHIO PERU
+        \n\n2. Proporciona tu CODIGO DE PAGO
+        \n\n3. Indica el monto total y moneda a pagar.
+    </string>
+    <string name="instruction_scotia_bank" translatable="false">
+        1. Acércate a una oficina o agencia del Scotiabank e indica que deseas pagar al servicio de recaudación de KASHIO PERU
+        \n\n2. Proporciona tu CODIGO DE PAGO según corresponda\n\n3. Elije el tipo de moneda y el moto a pagar
+        \n\n4. Recibe el voucher de pago de la operación.
+    </string>
+    <string name="instruction_scotia_mobile" translatable="false">
+        1. Ingresa a tu cuenta de Scotiabank en https://www.scotiabank.com.pe\n\n2. Accede al menú de “PAGOS” y busca "EMPRESAS"
+        \n\n3. Selecciona "KASHIO PERU SOLES" y "KASHIO PERU DOLARES" según corresponda
+        \n\n4. En el campo referencia CODIGO DE PAGO
+        \n\n5. Selecciona la deuda a pagar, confirma el pago con tu clave token y Listo!
+    </string>
+    <string name="instruction_scotia_web" translatable="false">
+        1. Ingresa a tu cuenta de Scotiabank en https://www.scotiabank.com.pe
+        \n\n2. Accede al menú de "Pagar o Recargar > Otras empresas e instituciones > Otros"
+        \n\n3. Selecciona "KASHIO PERU SOLES" y "KASHIO PERU DOLARES" según corresponda
+        \n\n4. En el campo referencia ingresa tu CODIGO DE PAGO
+        \n\n5. Selecciona la deuda a pagar, confirma el pago con tu clave token y Listo!
+    </string>
+</resources>

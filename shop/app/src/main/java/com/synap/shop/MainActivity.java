@@ -158,7 +158,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     @Override
                     public void failed(SynapAuthorizeResponse response) {
-                        Looper.prepare();
+                        if(Looper.myLooper() == null){
+                            Looper.prepare();
+                        }
+                        // Looper.prepare();
                         String messageText=response.getMessage().getText();
                         // Agregue el código de la experiencia que desee visualizar en un error
                         showMessage(messageText);
