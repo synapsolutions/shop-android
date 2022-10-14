@@ -27,10 +27,10 @@
         android:layout_width="432dp"
         android:layout_height="75dp"
         android:layout_marginTop="40dp"
-        android:background="#96BC33"
+        android:background="#20fdc3"
         android:text="Pagar S/ 1.00"
         android:textAllCaps="false"
-        android:textColor="#ffffff"
+        android:textColor="#2c1b3d"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,10 +45,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="#96BC33"
+        android:background="#20fdc3"
         android:text="Continuar al pago"
         android:textAllCaps="false"
-        android:textColor="#ffffff"
+        android:textColor="#2c1b3d"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,4 +63,11 @@
         android:background="@drawable/synapsis_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/synapWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"/>
+
 </android.support.constraint.ConstraintLayout>

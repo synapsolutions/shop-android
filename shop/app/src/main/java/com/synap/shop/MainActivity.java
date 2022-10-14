@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SynapPayButton paymentWidget;
     private FrameLayout synapForm;
+    private WebView synapWebView;
     private Button synapButton;
 
     @Override
@@ -50,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         // Asocie y oculte el contenedor del formulario de pago (FrameLayout), hasta que se ejecute la acción de continuar al pago
         synapForm = findViewById(R.id.synapForm);
         synapForm.setVisibility(View.GONE);
+
+        // Asocie y oculte el contenedor del formulario web (WebView), hasta que se ejecute el proceso de autenticación automáticamente
+        synapWebView = findViewById(R.id.synapWebView);
+        synapWebView.setVisibility(View.GONE);
 
         // Asocie y oculte el botón de pago (Button), hasta que se ejecute la acción de continuar al pago
         synapButton=findViewById(R.id.synapButton);
@@ -79,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         synapButton.setVisibility(View.VISIBLE);
 
         // Crea el objeto del widget de pago
-        this.paymentWidget=SynapPayButton.create(synapForm);
+        // this.paymentWidget=SynapPayButton.create(synapForm);
+        this.paymentWidget=SynapPayButton.create(synapForm, synapWebView);
 
         // Tema de fondo en la tarjeta (Light o Dark)
         // SynapTheme theme = new SynapLightTheme(); // Fondo de tajeta claro
@@ -119,12 +126,16 @@ public class MainActivity extends AppCompatActivity {
                 // Seteo de autenticación de seguridad y transacción
                 authenticator,
                 transaction,
+                synapWebView,
 
                 // Manejo de la respuesta
                 new SynapAuthorizeHandler() {
                     @Override
                     public void success(SynapAuthorizeResponse response) {
-                        Looper.prepare();
+                        if(Looper.myLooper() == null){
+                            Looper.prepare();
+                        }
+                        // Looper.prepare();
                         boolean resultSuccess = response.getSuccess();
                         if (resultSuccess) {
                             boolean resultAccepted=response.getResult().getAccepted();
@@ -147,7 +158,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     @Override
                     public void failed(SynapAuthorizeResponse response) {
-                        Looper.prepare();
+                        if(Looper.myLooper() == null){
+                            Looper.prepare();
+                        }
+                        // Looper.prepare();
                         String messageText=response.getMessage().getText();
                         // Agregue el código de la experiencia que desee visualizar en un error
                         showMessage(messageText);
@@ -197,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         customer.setAddress(address);
 
         // Seteo del email y teléfono
-        customer.setEmail("javier.perez@synapsis.pe");
+        customer.setEmail("review@review.com");
         customer.setPhone("999888777");
 
         // Referencie al objeto documento del cliente
