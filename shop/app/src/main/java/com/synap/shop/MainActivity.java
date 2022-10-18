@@ -287,14 +287,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private SynapAuthenticator buildAuthenticator(SynapTransaction transaction){
-        // String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
-        String apiKey="4d78b7b1-52cd-418b-8532-94cf0a1d514c";
+        String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
 
         // La signatureKey y la función de generación de firma debe usarse e implementarse en el servidor del comercio utilizando la función criptográfica SHA-512
         // solo con propósito de demostrar la funcionalidad, se implementará en el ejemplo
         // (bajo ninguna circunstancia debe exponerse la signatureKey y la función de firma desde la aplicación porque compromete la seguridad)
-        // String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
-        String signatureKey="x#lE6WT*4duyMODG*nIaD#Ma84qeS$ra";
+        String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
 
         String signature=generateSignature(transaction,apiKey,signatureKey);
 
