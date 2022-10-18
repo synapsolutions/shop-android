@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         synapButton.setVisibility(View.VISIBLE);
 
         // Crea el objeto del widget de pago
-        // this.paymentWidget=SynapPayButton.create(synapForm);
         this.paymentWidget=SynapPayButton.create(synapForm, synapWebView);
 
         // Tema de fondo en la tarjeta (Light o Dark)
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 // Seteo de autenticación de seguridad y transacción
                 authenticator,
                 transaction,
-                synapWebView,
+                synapWebView, // Seteo de WebView de autenticación 3DS
 
                 // Manejo de la respuesta
                 new SynapAuthorizeHandler() {
@@ -134,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                         if(Looper.myLooper() == null){
                             Looper.prepare();
                         }
-                        // Looper.prepare();
                         boolean resultSuccess = response.getSuccess();
                         if (resultSuccess) {
                             boolean resultAccepted=response.getResult().getAccepted();
@@ -160,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
                         if(Looper.myLooper() == null){
                             Looper.prepare();
                         }
-                        // Looper.prepare();
                         String messageText=response.getMessage().getText();
                         // Agregue el código de la experiencia que desee visualizar en un error
                         showMessage(messageText);
