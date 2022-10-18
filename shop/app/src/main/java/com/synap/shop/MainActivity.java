@@ -3,8 +3,8 @@ package com.synap.shop;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -29,7 +29,6 @@ import com.synap.pay.model.payment.SynapTransaction;
 import com.synap.pay.model.payment.response.SynapAuthorizeResponse;
 import com.synap.pay.model.security.SynapAuthenticator;
 import com.synap.pay.theming.SynapDarkTheme;
-import com.synap.pay.theming.SynapLightTheme;
 import com.synap.pay.theming.SynapTheme;
 
 import java.security.MessageDigest;
@@ -85,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         synapButton.setVisibility(View.VISIBLE);
 
         // Crea el objeto del widget de pago
-        // this.paymentWidget=SynapPayButton.create(synapForm);
         this.paymentWidget=SynapPayButton.create(synapForm, synapWebView);
 
         // Tema de fondo en la tarjeta (Light o Dark)
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 // Seteo de autenticación de seguridad y transacción
                 authenticator,
                 transaction,
-                synapWebView,
+                synapWebView, // Seteo de WebView de autenticación 3DS
 
                 // Manejo de la respuesta
                 new SynapAuthorizeHandler() {
@@ -135,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                         if(Looper.myLooper() == null){
                             Looper.prepare();
                         }
-                        // Looper.prepare();
                         boolean resultSuccess = response.getSuccess();
                         if (resultSuccess) {
                             boolean resultAccepted=response.getResult().getAccepted();
@@ -161,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
                         if(Looper.myLooper() == null){
                             Looper.prepare();
                         }
-                        // Looper.prepare();
                         String messageText=response.getMessage().getText();
                         // Agregue el código de la experiencia que desee visualizar en un error
                         showMessage(messageText);
