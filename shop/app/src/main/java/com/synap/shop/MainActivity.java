@@ -3,8 +3,8 @@ package com.synap.shop;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -29,7 +29,6 @@ import com.synap.pay.model.payment.SynapTransaction;
 import com.synap.pay.model.payment.response.SynapAuthorizeResponse;
 import com.synap.pay.model.security.SynapAuthenticator;
 import com.synap.pay.theming.SynapDarkTheme;
-import com.synap.pay.theming.SynapLightTheme;
 import com.synap.pay.theming.SynapTheme;
 
 import java.security.MessageDigest;
@@ -288,12 +287,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private SynapAuthenticator buildAuthenticator(SynapTransaction transaction){
-        String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
+        // String apiKey="ab254a10-ddc2-4d84-8f31-d3fab9d49520";
+        String apiKey="4d78b7b1-52cd-418b-8532-94cf0a1d514c";
 
         // La signatureKey y la función de generación de firma debe usarse e implementarse en el servidor del comercio utilizando la función criptográfica SHA-512
         // solo con propósito de demostrar la funcionalidad, se implementará en el ejemplo
         // (bajo ninguna circunstancia debe exponerse la signatureKey y la función de firma desde la aplicación porque compromete la seguridad)
-        String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
+        // String signatureKey="eDpehY%YPYgsoludCSZhu*WLdmKBWfAo";
+        String signatureKey="x#lE6WT*4duyMODG*nIaD#Ma84qeS$ra";
 
         String signature=generateSignature(transaction,apiKey,signatureKey);
 

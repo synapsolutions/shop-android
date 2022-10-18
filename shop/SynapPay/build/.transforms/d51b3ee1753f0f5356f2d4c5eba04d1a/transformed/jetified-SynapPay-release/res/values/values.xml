@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Synap Pay</string>
+    <string name="card_label_delete" translatable="false">Eliminar Tarjeta</string>
+    <string name="card_label_remember" translatable="false">Recordar Tarjeta</string>
+    <string name="kashio_button_share" translatable="false">Compartir Código</string>
+    <string name="kashio_image_bank_processor" translatable="false">Logo de los bancos del procesador</string>
+    <string name="kashio_image_processor_description" translatable="false">Logo del procesador</string>
+    <string name="kashio_instructions" translatable="false">
+        Pago vía Banca Móvil y Web\n\n
+        1. Ingresa a tu Banca Móvil o Web.\n
+        2. Selecciona la opción \'Pagar Servicio\'.\n
+        3. Busca la institución ó empresa \'Kashio Peru\' y selecciona \'Kashio Peru @currency\'.\n
+        4. Ingresa tu Código de Pago, selecciona la deuda a pagar, confirma y ¡Listo!\n
+    </string>
+    <string name="kashio_label_bank" translatable="false">Puedes pagar en</string>
+    <string name="kashio_label_expiration" translatable="false">[expire]</string>
+    <string name="kashio_label_header" translatable="false">Para realizar el pago indica los siguientes datos</string>
+    <string name="kashio_label_payment_amount" translatable="false">IMPORTE A PAGAR</string>
+    <string name="kashio_label_payment_code" translatable="false">CÓDIGO DE PAGO</string>
+    <string name="kashio_payment_amount" translatable="false">[amount]</string>
+    <string name="kashio_payment_code" translatable="false">[code]</string>
+    <string name="pagoefectivo_button_share" translatable="false">Compartir Código (CIP)</string>
+    <string name="pagoefectivo_instructions" translatable="false">
+        Pago vía Banca Móvil y por Internet\n\n
+        BBVA, BCP, Interbank, Caja Arequipa, Scotiabank, Banbif, Banco Pichincha(a) y Dale(b).\n\n
+        1. Selecciona la opción Pago de Servicios.\n
+        2. Busca y selecciona la institución\/empresa \'PAGOEFECTIVO\'.\n
+        3. Selecciona \'PAGOEFECTIVO @currency\'.\n
+        4. Ingresa tu Código CIP y sigue los pasos.\n\n
+        a. Habilitado solo en banca móvil.\n
+        b. Disponible en la billetera electrónica Dale.\n\n\n
+    </string>
+    <string name="pagoefectivo_instructions_text2" translatable="false">
+        Pago en efectivo por Agentes y Bodegas\n\n
+        Express BBVA, Agente BCP(a), Agente Interbank, Agente Red Digital(b), KasNet(c), Agente Niubiz(d), Caja Arequipa, Scotiabank, Tambo+(e),Western Union,Disashop,Perú Express-MoneyGram,Ya Ganaste,Cellpower.\n\n
+        1. Indica que vas realizar un pago a la empresa \'PAGOEFECTIVO\'.\n
+        2. Indica que realizarás el pago a \'PAGOEFECTIVO @currency\'.\n
+        3. Indica el Código CIP y el importe a pagar.\n\n
+        a. Agentes BCP: Brinda el código de empresa 02186.\n
+        b. Agente Red Digital: Comisión adicional S/ 1.00.\n
+        c. Agentes KasNet: Brinda el código de empresa 220060.\n
+        d. Agente Niubiz: Solo en Comercios que cuenten con la App VendeMás de Niubiz.\n
+        e. Tambo+: Opera a través de un Agente BBVA.\n\n
+        Nota: Los horarios de atención y monto de pago dependerán de cada establecimiento.\n\n\n
+    </string>
+    <string name="pagoefectivo_instructions_text3" translatable="false">
+        Pago en efectivo por Agencias Bancarias\n\n
+        BBVA, BCP, Interbank(a), Caja Arequipa, Scotiabank, BanBif, Banco de la Nación(b), Caja Sullana, Caja los Andes, Caja Paita, Caja Trujillo, Caja del Santa, Caja Raíz.\n\n
+        1. Indica que vas realizar un pago a la empresa \'PAGOEFECTIVO\'.\n
+        2. Indica que realizarás el pago a \'PAGOEFECTIVO @currency\'.\n
+        3. Indica el Código CIP y el importe a pagar.\n\n
+        a. Agentes Money Market de Interbank: Costo adicional S/ 2.00.\n
+        b. Solicítalo como pago de Factura en línea.\n\n\n
+    </string>
+    <string name="pagoefectivo_label_header" translatable="false">¡Estas a punto de finalizar tu compra!</string>
+    <string name="pagoefectivo_label_payment_amount" translatable="false">Monto a Pagar</string>
+    <string name="pagoefectivo_label_payment_code" translatable="false">Código de Pago (CIP)</string>
+</resources>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="500dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/Header"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/lineHeader"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#0055AD" />
+
+            <ImageView
+                android:id="@+id/imageProcessor"
+                android:contentDescription="@string/kashio_image_processor_description"
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:translationY="5dp"
+                app:srcCompat="@drawable/synap_kashio" />
+
+            <TextView
+                android:id="@+id/labelHeader"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal"
+                android:text="@string/kashio_label_header"
+                android:textColor="#282828"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PaymentInformation"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#F1F1F1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelPaymentCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/kashio_label_payment_code"
+                    android:textColor="#282828"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/paymentCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/kashio_payment_code"
+                    android:textColor="#282828"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#F1F1F1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelPaymentAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/kashio_label_payment_amount"
+                    android:textColor="#282828"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/paymentAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/kashio_payment_amount"
+                    android:textColor="#282828"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ExpiryInformation"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labelExpiration"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/kashio_label_expiration"
+                android:textColor="#282828"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Banks"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/lineDivider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#F1F1F1" />
+
+            <TextView
+                android:id="@+id/labelBank"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/kashio_label_bank"
+                android:textColor="#282828"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/imageProcessorBanks"
+                android:contentDescription="@string/kashio_image_bank_processor"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/synap_kashio_banks" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Share"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonShare"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/kashio_round_button"
+                android:layout_gravity="center"
+                android:text="@string/kashio_button_share"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Instructions"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/lineDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#F1F1F1" />
+
+            <TextView
+                android:id="@+id/instructionInformation"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="start|top"
+                android:text="@string/kashio_instructions"
+                android:textColor="#282828"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
